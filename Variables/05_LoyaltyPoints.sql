@@ -20,7 +20,7 @@ DECLARE @CurrentYear INT = YEAR(GETDATE());
 SET @CustomerId = 1; -- Example: Calculate points for CustomerId 1
 
 -- Calculate total amount spent by the customer in the current year
-SELECT @TotalSpent = SUM(Amount)
+SELECT @TotalSpent = SUM(p.Amount)
 FROM Purchases p
 WHERE p.[CustomerId] = @CustomerId 
 AND YEAR(p.[PurchaseDate]) = @CurrentYear;
@@ -30,8 +30,8 @@ AND YEAR(p.[PurchaseDate]) = @CurrentYear;
 SET @PointsEarned = CAST(@TotalSpent / 10 AS INT);
 
 -- Update loyalty points in Customers table
-UPDATE Customers c
-SET c.[LoyaltyPoints] = LoyaltyPoints + @PointsEarned
+UPDATE Customers
+SET [LoyaltyPoints] = [LoyaltyPoints] + @PointsEarned
 WHERE CustomerId = @CustomerId;
 
 -- Print the results
