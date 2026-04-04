@@ -122,11 +122,29 @@ CREATE TABLE Transactions (
     Date DATETIME
 );
 
+CREATE TABLE Students (
+    StudentID INT PRIMARY KEY,
+    Name NVARCHAR(50),
+    Subject NVARCHAR(50),
+    Grade INT
+);
 
--- Insert Sample Data into Accounts
-INSERT INTO Accounts (AccountID, Balance) VALUES (1, 500.00); -- Account 1
-INSERT INTO Accounts (AccountID, Balance) VALUES (2, 300.00); -- Account 2
+GO
 
+-- Insert sample data into the Students table
+INSERT INTO Students (StudentID, Name, Subject, Grade)
+VALUES
+    (1, 'Alice', 'Math', 90),
+    (2, 'Bob', 'Math', 85),
+    (3, 'Charlie', 'Math', 78),
+    (4, 'Dave', 'Science', 88),
+    (5, 'Emma', 'Science', 92),
+    (6, 'Fiona', 'Science', 84),
+    (7, 'Grace', 'English', 75),
+    (8, 'Henry', 'English', 80),
+    (9, 'Isabella', 'English', 88);
+INSERT INTO Accounts (AccountID, Balance) VALUES (1, 500.00);
+INSERT INTO Accounts (AccountID, Balance) VALUES (2, 300.00);
 INSERT INTO Employees2 (Name, Department, Salary, PerformanceRating) VALUES ('Employee 1', 'Marketing', 90651, 81);
 INSERT INTO Employees2 (Name, Department, Salary, PerformanceRating) VALUES ('Employee 2', 'Marketing', 62945, 75);
 INSERT INTO Employees2 (Name, Department, Salary, PerformanceRating) VALUES ('Employee 3', 'HR', 59665, 80);
