@@ -171,18 +171,21 @@ Through building this repository, I developed proficiency in:
    git clone https://github.com/yourusername/TSQL-Advanced-Concepts.git
    ```
 2. Open SSMS and connect to your SQL Server instance
-3. Navigate to any module folder and open the `.sql` files
+3. Restore the sample database from `SampleDatabaseBackup/` folder (see [Database Setup](#️-database-setup) section)
+4. Navigate to any module folder and open the `.sql` files
 
 ---
 
 ## ▶️ How to Run the Project
 
-1. Open any `.sql` file in SSMS or Azure Data Studio
-2. Connect to your SQL Server instance
-3. Execute scripts in numerical order within each module
-4. Review the comments for explanations and expected results
+1. **Restore the sample database** from `SampleDatabaseBackup/` folder (recommended for best experience)
+2. Open any `.sql` file in SSMS or Azure Data Studio
+3. Connect to your SQL Server instance
+4. Ensure you're using the restored sample database (`USE SampleDB;`)
+5. Execute scripts in numerical order within each module
+6. Review the comments for explanations and expected results
 
-> **Tip:** Each script is self-contained with comments explaining the concept being demonstrated.
+> **Tip:** Restoring the sample database ensures all required tables and sample data are available for the scripts to work correctly.
 
 ---
 
