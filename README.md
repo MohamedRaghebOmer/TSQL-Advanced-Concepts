@@ -58,6 +58,7 @@ TSQL-Advanced-Concepts/
 ├── 14_Cursors/                      # Cursor types and row-by-row processing
 ├── 15_CTE/                          # Common Table Expressions and recursion
 │
+├── SampleDatabaseBackup/            # Sample database backup file (.bak)
 ├── LICENSE                          # MIT License
 └── README.md                        # This file
 ```
@@ -187,7 +188,29 @@ Through building this repository, I developed proficiency in:
 
 ## 🗄️ Database Setup
 
-Some scripts reference sample tables. Create these tables as needed:
+### Option 1: Restore Sample Database (Recommended)
+
+A ready-to-use sample database backup is included in the `SampleDatabaseBackup/` folder. This is the easiest way to get started:
+
+1. Locate the backup file in `SampleDatabaseBackup/SampleDatabaseBackup`
+2. Restore the database using SSMS:
+   - Right-click **Databases** → **Restore Database...**
+   - Select **Device** → Click **...** → **Add** → Browse to the backup file
+   - Click **OK** to restore
+3. Or use T-SQL:
+   ```sql
+   RESTORE DATABASE SampleDB
+   FROM DISK = 'C:\Path\To\SampleDatabaseBackup\SampleDatabaseBackup'
+   WITH MOVE 'SampleDB' TO 'C:\SQL\Data\SampleDB.mdf',
+        MOVE 'SampleDB_log' TO 'C:\SQL\Data\SampleDB_log.ldf',
+        REPLACE;
+   ```
+
+> **Note:** Adjust the file paths according to your SQL Server installation.
+
+### Option 2: Create Tables Manually
+
+If you prefer to create tables manually, use these sample structures:
 
 ```sql
 -- Example: Students table used in multiple modules
