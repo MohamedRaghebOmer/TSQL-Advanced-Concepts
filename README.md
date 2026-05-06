@@ -1,4 +1,4 @@
-# 📘 T-SQL Advanced Concepts
+# 📘 T-SQL Advanced Concepts  
 
 A comprehensive collection of **T-SQL scripts** covering advanced SQL Server programming concepts. This repository serves as a practical learning resource and reference guide for mastering T-SQL fundamentals and advanced techniques.
 
